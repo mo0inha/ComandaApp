@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Shared.Entities;
 
 namespace Domain.Entities
 {
-    internal class RolePermission
+    public class RolePermission : BaseEntity
     {
+        #region Relationships
+        public Role Role { get; set; }
+        public Permission Permission { get; set; }
+        #endregion
+
+        public Guid RoleId { get; set; }
+        public Guid PermissionId { get; set; }
     }
 }

@@ -1,12 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Shared.Entities;
 
 namespace Domain.Entities
 {
-    internal class User
+    public class User : BaseEntity
     {
+        #region Relationships
+        public Role Role { get; set; }
+        #endregion
+
+        public string Name { get; set; }
+        public Guid RoleId { get; set; }
+        public string Login { get; set; }
+        public string Password { get; set; }
+        public ICollection<Order> Orders { get; set; }
     }
 }
